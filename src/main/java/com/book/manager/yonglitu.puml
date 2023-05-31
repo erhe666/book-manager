@@ -1,0 +1,39 @@
+@startuml
+left to right direction
+actor 管理员
+rectangle 图书管理系统 {
+    rectangle 管理员功能 {
+        usecase 图书管理
+        usecase 借阅管理
+        usecase 读者管理
+        usecase 用户中心
+        管理员 --> 图书管理
+        管理员 --> 借阅管理
+        管理员 --> 读者管理
+        管理员 --> 用户中心
+    }
+
+
+    usecase 图书列表
+    usecase 图书上架
+    usecase 搜索图书
+    usecase 借阅图书
+    usecase 归还图书
+    usecase 读者列表
+    usecase 读者添加
+    usecase 个人信息
+    usecase 用户管理
+    usecase 添加管理员
+
+    图书管理 --> 图书列表
+    图书管理 --> 图书上架
+    借阅管理 --> 搜索图书
+    借阅管理 --> 借阅图书
+    借阅管理 --> 归还图书
+    读者管理 --> 读者列表
+    读者管理 --> 读者添加
+    用户中心 --> 个人信息
+    用户中心 --> 用户管理
+    用户中心 --> 添加管理员
+}
+@enduml

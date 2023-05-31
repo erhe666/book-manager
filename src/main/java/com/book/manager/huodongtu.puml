@@ -1,0 +1,49 @@
+@startuml
+|用户|
+
+start
+
+if (登录类型) then (管理员)
+    :输入管理员账号密码;
+    |管理员|
+    if (管理员身份验证成功) then (是)
+        :进入管理员主页面;
+        repeat
+            :选择功能;
+            if (用户中心) then (是)
+                :添加管理员;
+                :管理管理员;
+            else if (读者管理) then (是)
+                :添加读者;
+                :管理读者;
+            else if (图书管理) then (是)
+                :添加图书;
+                :管理图书;
+            endif
+        repeat while (退出系统) not (是)
+    else
+        :管理员身份验证失败;
+    endif
+else
+    :输入用户账号密码;
+    |普通用户|
+    if (用户身份验证成功) then (是)
+        :进入用户主页面;
+        repeat
+            :选择功能;
+            if (借阅管理) then (是)
+                :借阅图书;
+                :查看借阅历史;
+            else if (图书管理) then (是)
+                :查看图书列表;
+            endif
+        repeat while (退出系统)not (是)
+    else
+        :用户身份验证失败;
+    endif
+endif
+
+|用户|
+stop
+
+@enduml

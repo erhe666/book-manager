@@ -1,0 +1,30 @@
+@startuml@startuml
+         left to right direction
+         actor 普通用户
+         rectangle 图书管理系统 {
+             rectangle 普通用户功能 {
+                 usecase 图书管理
+                 usecase 借阅管理
+
+
+                 普通用户 --> 图书管理
+                 普通用户 --> 借阅管理
+             }
+
+
+             usecase 图书列表
+
+
+             usecase 搜索图书
+             usecase 借阅图书
+             usecase 归还图书
+
+
+             图书管理 --> 图书列表
+
+
+             借阅管理 --> 搜索图书
+             借阅管理 --> 借阅图书
+             借阅管理 --> 归还图书
+         }
+@enduml

@@ -1,0 +1,46 @@
+@startuml
+entity Book {
+  * id: int
+  --
+  author: varchar
+  isbn: varchar
+  name: varchar
+  pages: int
+  price: double
+  publish: varchar
+  publish_time: datetime
+  size: int
+  translate: varchar
+  type: varchar
+}
+
+entity Borrow {
+  * id: int
+  --
+  book_id: int
+  create_time: datetime
+  update_time: datetime
+  user_id: int
+  end_time: datetime
+  ret: int
+}
+
+entity User {
+  * id: int
+  --
+  address: varchar
+  avatar: varchar
+  birthday: datetime
+  email: varchar
+  identity: int
+  is_admin: int
+  nickname: varchar
+  password: varchar
+  size: int
+  tel: varchar
+  username: varchar
+}
+
+Book ||--o{ Borrow
+User ||--o{ Borrow
+@enduml

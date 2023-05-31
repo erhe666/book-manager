@@ -1,0 +1,43 @@
+@startuml
+class Book {
+  -id: int
+  -isbn: string
+  -name: string
+  -author: string
+  -pages: int
+  -translate: string
+  -publish: string
+  -price: double
+  -size: int
+  -type: string
+  -publishTime: date
+}
+
+class Borrow {
+  -id: int
+  -userID: int
+  -bookID: int
+  -createTime: date
+  -endTime: date
+  -updateTime: date
+  -ret: int
+}
+
+class User {
+  -id: int
+  -avatar: string
+  -nickname: string
+  -username: string
+  -password: string
+  -birthday: date
+  -isAdmin: int
+  -tel: string
+  -email: string
+  -address: string
+  -size: int
+  -identity: int
+}
+
+Book "1" *-- "0..*" Borrow
+User "1" *-- "0..*" Borrow
+@enduml
